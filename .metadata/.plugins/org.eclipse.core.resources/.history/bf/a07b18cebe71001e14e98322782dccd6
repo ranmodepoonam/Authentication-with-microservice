@@ -1,0 +1,41 @@
+package com.osc.userservice.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.osc.proto.storeUserDetailsGrpc;
+import com.osc.proto.storeUserDetailsGrpc.storeUserDetailsBlockingStub;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+@Configuration
+public class ApplicationInitialization {
+
+//	@Autowired
+//	private ManagedChannel channel;
+
+//	@Bean
+//	public storeUserDetailsBlockingStub storeUserDetailsServiceBlockingStub() {
+//		 channel = ManagedChannelBuilder
+//				 .forAddress(ConfiguredProperties.getCacheStaticGrpcHost(), ConfiguredProperties.getCacheStaticGrpcPort()).usePlaintext().build();
+//
+//		return storeUserDetailsGrpc.newBlockingStub(channel);
+//	}
+
+	@Bean
+	public ManagedChannel grpcChannel() {
+		// Replace 'your_grpc_server_host' and 'your_grpc_server_port' with the actual
+		// host and port of your gRPC server
+		String host = "cache-service";
+		int port = 9090;
+
+		// Create and return a ManagedChannel
+		return ManagedChannelBuilder.forAddress(host, port).usePlaintext() // Use plaintext communication, for
+																			// production use cases consider securing
+																			// the channel
+				.build();
+	}
+
+}

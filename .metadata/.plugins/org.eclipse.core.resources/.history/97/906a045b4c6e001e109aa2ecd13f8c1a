@@ -1,0 +1,5 @@
+package com.osc.cacheservice.config;
+
+public class HazelcastConfig {
+
+}

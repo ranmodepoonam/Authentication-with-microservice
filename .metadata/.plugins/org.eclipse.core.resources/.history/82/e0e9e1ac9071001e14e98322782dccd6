@@ -1,0 +1,34 @@
+package com.osc.cacheservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.osc.cacheservice.cache.UserCache;
+import com.osc.proto.storeUserDetailsGrpc.storeUserDetailsImplBase;
+import com.osc.proto.userDetailsRequest;
+import com.osc.proto.userDetailsResponse;
+
+import io.grpc.stub.StreamObserver;
+import lombok.extern.slf4j.Slf4j;
+import net.devh.boot.grpc.server.service.GrpcService;
+
+@GrpcService
+@Slf4j
+public class StoreUserDetailsService extends storeUserDetailsImplBase{
+	
+	@Autowired
+	private UserCache userCache;
+
+	@Override
+	public void getTemplateInfo(userDetailsRequest request, StreamObserver<userDetailsResponse> responseObserver) {
+		super.getTemplateInfo(request, responseObserver);
+		
+		log.info("in grpc service : "+request);
+		userCache.saveUser(request.getUserId(), request.getName(), request.getEmail(), request.getContact(), request.getDOB(), request.getPassword(), request.getOTP());
+		userDetailsResponse response = userDetailsResponse.newBuilder().setMessage("User information Saved successfully").build();
+		
+		log.info("response to userservice : "+response);
+		responseObserver.onNext(response);
+		responseObserver.onCompleted();
+	}
+
+}

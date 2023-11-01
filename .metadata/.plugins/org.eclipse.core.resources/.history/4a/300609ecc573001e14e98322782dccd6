@@ -1,0 +1,19 @@
+package com.osc.cacheservice.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
+@AllArgsConstructor
+public class User {
+
+	   String name;
+	   String email;
+	   String contact;
+	   String DOB;
+	   String password;
+	   String OTP;
+
+}

@@ -1,0 +1,30 @@
+package com.osc.cacheservice.cache;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.map.IMap;
+import com.osc.cacheservice.model.User;
+
+public class UserCache {
+	
+	private static UserCache instance = null;
+	
+    @Autowired
+    private HazelcastInstance hazelcastInstance;
+	
+	private IMap<String, User> myMap = hazelcastInstance.getMap("my-distributed-map");
+	
+	public static UserCache getInstance() {
+		if(instance==null) {
+			instance=new UserCache();
+		}
+		return instance;
+	}
+	
+	public void saveUser(String userId, User userToCache) {
+		
+		User user = new User(String name,String email,String contact,String DOB,String password,String OTP);
+	}
+
+}

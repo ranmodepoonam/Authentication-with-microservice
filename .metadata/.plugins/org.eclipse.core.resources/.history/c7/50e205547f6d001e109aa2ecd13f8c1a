@@ -1,0 +1,5 @@
+package com.osc.cacheservice.model;
+
+public class UserCache {
+
+}

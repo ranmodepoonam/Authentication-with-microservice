@@ -1,0 +1,24 @@
+package com.osc.userservice.applicationInitialization;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.osc.proto.storeUserDetailsGrpc.storeUserDetailsBlockingStub;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+@Configuration
+public class ApplicationConfig {
+	
+private ManagedChannel channel;
+	
+	@Bean
+	public storeUserDetailsBlockingStub storeUserDetailsServiceBlockingStub() {
+		 channel = ManagedChannelBuilder
+				.forAddress(ConfiguredProperties.getUserStaticGrpcHost(), ConfiguredProperties.getUserStaticGrpcPort()).usePlaintext().build();
+
+		return UserPermissionsServiceGrpc.newBlockingStub(channel);
+	}
+
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.osc.proto";
+option java_multiple_files = true;
+
+message userDetailsRequest {
+   string userId = 1;
+   string name = 2;
+   string email = 3;
+   string contact = 4;
+   string DOB = 5;
+   string OTP=6;
+}
+
+message userDetailsResponse {
+   string message = 1;
+}
+
+service storeUserDetails {
+   rpc getTemplateInfo (userDetailsRequest) returns (userDetailsResponse) {}
+}

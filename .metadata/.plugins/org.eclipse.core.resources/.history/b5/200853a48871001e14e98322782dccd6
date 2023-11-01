@@ -1,0 +1,21 @@
+package com.osc.cacheservice.service;
+
+import com.osc.proto.storeUserDetailsGrpc.storeUserDetailsImplBase;
+import com.osc.proto.userDetailsRequest;
+import com.osc.proto.userDetailsResponse;
+
+import io.grpc.stub.StreamObserver;
+import net.devh.boot.grpc.server.service.GrpcService;
+
+@GrpcService
+public class StoreUserDetailsService extends storeUserDetailsImplBase{
+
+	@Override
+	public void getTemplateInfo(userDetailsRequest request, StreamObserver<userDetailsResponse> responseObserver) {
+		super.getTemplateInfo(request, responseObserver);
+		
+		String userId = "user"+request.getOTP();
+		
+	}
+
+}

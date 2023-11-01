@@ -1,0 +1,5 @@
+package com.osc.userservice.grpcService;
+
+public class CallUserStoreService {
+
+}

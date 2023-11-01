@@ -1,0 +1,8 @@
+package com.osc.userservice.utils;
+
+public class AppConstants {
+
+//problem is here.....
+	public static final String CACHE_SERVICE_HOST = "127.0.0.1";
+	public static final int CACHE_SERVICE_PORT = 9090;
+}

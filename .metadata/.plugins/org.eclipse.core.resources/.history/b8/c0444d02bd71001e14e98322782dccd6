@@ -1,0 +1,14 @@
+package com.osc.userservice.config;
+
+import com.osc.userservice.utils.AppConstants;
+
+public class ConfiguredProperties {
+
+	public static String getUserStaticGrpcHost() {
+		return AppConstants.CACHE_SERVICE_HOST;
+	}
+
+	public static int getUserStaticGrpcPort() {
+		return AppConstants.CACHE_SERVICE_PORT;
+	}
+}

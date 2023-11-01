@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.kafka=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=2
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=cache-service
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.1.4
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=cache service to strore user details locally
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.osc
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=17
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=cache-service
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.osc.cache-service
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

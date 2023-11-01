@@ -1,0 +1,10 @@
+server.port=8085
+spring.datasource.password=OroDev1@3
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres?reWriteBatchedInserts=true
+spring.datasource.username=postgres
+
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.datasource.driverClassName=org.postgresql.Driver
+spring.profiles.active=dev

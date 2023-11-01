@@ -1,0 +1,5 @@
+package com.osc.cacheservice.service;
+
+public class StoreUserDetailsService {
+
+}

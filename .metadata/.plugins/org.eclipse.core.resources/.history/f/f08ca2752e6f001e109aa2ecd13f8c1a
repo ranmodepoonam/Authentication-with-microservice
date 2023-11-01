@@ -1,0 +1,17 @@
+package com.osc.cacheservice.model;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
+public class UserCache {
+
+	   String name;
+	   String email;
+	   String contact;
+	   String DOB;
+	   String password;
+	   String OTP;
+
+}

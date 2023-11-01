@@ -1,0 +1,22 @@
+package com.osc.cacheservice.cache;
+
+import com.hazelcast.config.Config;
+import com.hazelcast.core.Hazelcast;
+
+public class HazelcastSingleton {
+
+	private static HazelcastSingleton hazelcastInstance;
+
+	private HazelcastSingleton(){
+	//this constructor is there for preventing external instantiation
+	}
+	public static synchronized HazelcastSingleton getHazelcastInstance(){
+	if(hazelcastInstance==null)
+	{
+	Config config = new Config();
+	hazelcastInstance = Hazelcast.newHazelcastInstance(config);
+	}
+	return hazelcastInstance;
+	}
+	
+}

@@ -1,0 +1,41 @@
+package com.osc.cacheservice.cache;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.map.IMap;
+import com.osc.cacheservice.model.User;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class UserCache {
+	
+	private static UserCache instance;
+	
+    @Autowired
+    private HazelcastInstance hazelcastInstance;
+	
+	private IMap<String, User> userStore = this.hazelcastInstance.getMap("userStore-map");
+	
+	private UserCache() {		
+	}
+	
+	public static UserCache getInstance() {
+		if(instance==null) {
+			instance=new UserCache();
+			log.info("hazelcast map is created");
+		}
+		return instance;
+	}
+	
+	public void saveUser(String userId,String name,String email,String contact,String DOB,String password,String OTP) {
+		
+		User user = new User(name, email, contact, DOB, password, OTP);
+		log.info("user object is created");
+		this.userStore.put(userId, user);
+		log.info("userId and user object saved");
+	}
+	
+
+}
